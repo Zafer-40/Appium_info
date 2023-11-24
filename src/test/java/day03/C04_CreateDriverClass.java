@@ -23,7 +23,7 @@ public class C04_CreateDriverClass {
         driver.getAndroidDriver();
     }
 
-    @Test
+    @Test(priority = 1)
     public void multiplicationTest(){
         driver.androidDriver.findElementByAccessibilityId("7").click();
         driver.androidDriver.findElementByAccessibilityId("5").click();
@@ -32,7 +32,7 @@ public class C04_CreateDriverClass {
         driver.androidDriver.findElementByAccessibilityId("equals").click();
     }
 
-    @Test
+    @Test(priority = 2)
     public void additionTest(){
         driver.androidDriver.findElementByAccessibilityId("7").click();
         driver.androidDriver.findElementByAccessibilityId("5").click();
@@ -41,7 +41,7 @@ public class C04_CreateDriverClass {
         driver.androidDriver.findElementByAccessibilityId("5").click();
         driver.androidDriver.findElementByAccessibilityId("equals").click();
     }
-    @Test
+    @Test(priority = 3)
     public void subtractionTest(){
         driver.androidDriver.findElementByAccessibilityId("9").click();
         driver.androidDriver.findElementByAccessibilityId("5").click();
@@ -51,7 +51,7 @@ public class C04_CreateDriverClass {
         driver.androidDriver.findElementByAccessibilityId("equals").click();
 
     }
-    @Test
+    @Test(priority = 4)
     public void divisionTest(){
         driver.androidDriver.findElementByAccessibilityId("9").click();
         driver.androidDriver.findElementByAccessibilityId("5").click();
