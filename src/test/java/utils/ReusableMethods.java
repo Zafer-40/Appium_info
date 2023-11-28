@@ -1,14 +1,16 @@
 package utils;
 
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidTouchAction;
+import io.appium.java_client.touch.offset.PointOption;
 
 import static io.appium.java_client.touch.offset.PointOption.point;
 
-public class ReusableMethods {
+public class ReusableMethods extends Hooks{
 
-    Driver driver = new Driver();
-    TouchAction action = new TouchAction<>(driver.getAndroidDriver());
-
+    //Driver driver = new Driver();
+    //TouchAction action = new TouchAction<>(driver.getAndroidDriver());
+    AndroidTouchAction action;
     public void waitFor(int sec) {
         try {
             Thread.sleep(sec * 1000);
@@ -17,7 +19,20 @@ public class ReusableMethods {
         }
     }
 
-    public void tabOnThePoints(int StartPointx,int StartPointy){
-        action.tap(point(StartPointx,StartPointy)).perform();
+    public void tabOnThePoint(int startx, int starty){
+        action = new AndroidTouchAction(androidDriver);
+        action.tap(PointOption.point(startx,starty)).perform();
     }
+
+    public void scroll(int fromX,int fromY, int toX, int toY){
+        action = new AndroidTouchAction(androidDriver);
+        action.longPress(point(fromX,fromY))
+                .moveTo(point(toX,toY)).release().perform();
+    }
+
+
+
+//    public void tabOnThePoints(int StartPointx,int StartPointy){
+//        action.tap(PointOption.point(StartPointx,StartPointy)).perform();
+//    }
 }

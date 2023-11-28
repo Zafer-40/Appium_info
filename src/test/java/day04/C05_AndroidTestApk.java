@@ -39,14 +39,20 @@ public class C05_AndroidTestApk {
     @Test
     public void tabOnThePointwithTouchAction() {
         TouchAction action = new TouchAction<>(driver.getAndroidDriver());
-        action.tap(point(102,148)).perform();
+        action.tap(point(83,56)).perform();
         reusableMethods.waitFor(3);
+        action.tap(point(109,1370)).perform();
+        reusableMethods.waitFor(3);
+        action.tap(point(380,696)).perform();
+        reusableMethods.waitFor(3);
+        action.tap(point(233,945)).perform();
     }
 
-    @Test
-    public void dynamicTabMethodUsing(){
-        reusableMethods.tabOnThePoints(102,148);
-    }
+//    @Test
+//    public void dynamicTabMethodUsing(){
+//        reusableMethods.tabOnThePoints(102,148);
+//        reusableMethods.waitFor(4);
+//    }
 
 
     @AfterTest
